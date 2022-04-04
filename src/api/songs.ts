@@ -118,9 +118,11 @@ const shlok: Category = {
   list: {
     "sada-sarvada": {
       title: "सदा सर्वदा",
+      lyrics: "",
     },
     "morya-morya": {
       title: "मोरया मोरया",
+      lyrics: "",
     },
   },
 };
