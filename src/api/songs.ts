@@ -49,7 +49,7 @@ const aarti: Category = {
     "lavthavti-vikrala": {
       title: "लवथवती विक्राळा",
       audioUrl:
-        "http://adityamhamunkar.com/bappamusic/aarti/3-durge-durgahat.mp3",
+        "http://adityamhamunkar.com/bappamusic/aarti/2-lavthavti-vikrala.mp3",
       lyrics: `
     लवथवती विक्राळा ब्रम्हांडी माळा
     विषे कंठ काळा त्रिनेत्री ज्वाळा  ।
