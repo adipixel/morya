@@ -110,6 +110,7 @@ const gajar: Category = {
   list: {
     ashtavinayak: {
       title: "अष्टविनायक",
+      lyrics: "",
     },
   },
 };
