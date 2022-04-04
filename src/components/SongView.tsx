@@ -19,12 +19,8 @@ export function SongView() {
       <Grid item xs={1}>
         <Typography variant="h4">{song.title}</Typography>
       </Grid>
-      <Grid
-        item
-        xs={10}
-        style={{ overflowY: "scroll", height: `calc(100vh - 120px)` }}
-      >
-        <Typography style={{ whiteSpace: "pre-wrap" }}>
+      <Grid item style={{ overflowY: "scroll", height: `calc(100vh - 120px)` }}>
+        <Typography variant="body2" style={{ whiteSpace: "pre-wrap" }}>
           {song.lyrics}
         </Typography>
       </Grid>
