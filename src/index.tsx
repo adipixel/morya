@@ -3,6 +3,7 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 // import reportWebVitals from "./reportWebVitals";
+import { RecoilRoot } from "recoil";
 
 import { BrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
@@ -11,9 +12,11 @@ const container = document.getElementById("root");
 const root = createRoot(container as HTMLElement);
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <RecoilRoot>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </RecoilRoot>
   </React.StrictMode>
 );
 

@@ -21,7 +21,7 @@ const aarti: Category = {
     "sukhakarta-dukhaharta": {
       title: "सुखकर्ता दुखःहर्ता",
       audioUrl:
-        "http://adityamhamunkar.com/bappamusic/aarti/3-durge-durgahat.mp3",
+        "http://adityamhamunkar.com/bappamusic/aarti/1-sukhakarta-dukhaharta.mp3",
       lyrics: `
 सुखकर्ता दुखःहर्ता वार्ता विघ्नाची।
 नुरवी पुरवी प्रेम कृपा जयाची। 
