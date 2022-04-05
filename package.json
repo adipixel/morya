@@ -37,11 +37,12 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start:dev": "react-scripts start",
+    "start:dev": "PORT=5200 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "serve -s build"
+    "start:serve": "serve -s build",
+    "start": "cd server && node index.js"
   },
   "eslintConfig": {
     "extends": [
@@ -61,5 +62,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:3000"
 }

@@ -1,14 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 
-import { Routes, Route } from "react-router-dom";
 import { atom, useRecoilState } from "recoil";
 import { Categories } from "./api/songs";
 
 import "./App.css";
-import { AdminView } from "./components/AdminView/AdminView";
-import CategoryView from "./components/CategoryView";
-import Home from "./components/Home";
-import { SongView } from "./components/SongView";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -16,6 +11,9 @@ import Box from "@mui/material/Box";
 import Skeleton from "@mui/material/Skeleton";
 
 import { BackButton } from "./components/BackButton";
+import { PublishButton } from "./components/PublishButton";
+import { LiveButton } from "./components/LiveButton";
+import Router, { liveState } from "./Router";
 
 export const songsState = atom({
   key: "songsState", // unique ID (with respect to other atoms/selectors)
@@ -23,6 +21,7 @@ export const songsState = atom({
 });
 
 function App() {
+  const [liveObj] = useRecoilState(liveState);
   const [, setSongs] = useRecoilState<Categories>(songsState);
   const [isLoading, setIsLoading] = useState<Boolean>(true);
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme:dark)");
@@ -80,12 +79,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BackButton />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:categoryName" element={<CategoryView />} />
-        <Route path="/:categoryName/:songName" element={<SongView />} />
-        <Route path="/morya-admin" element={<AdminView />} />
-      </Routes>
+      {liveObj.isLive && liveObj.role === "subscriber" && (
+        <LiveButton color="error" />
+      )}
+      {liveObj.role === "publisher" && <PublishButton />}
+      <Router />
     </ThemeProvider>
   );
 }
