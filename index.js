@@ -7,7 +7,7 @@ const app = express();
 const port = 8080;
 
 // app.use(cors());
-
+app.set("port", process.env.PORT || 5000);
 app.use(express.static(path.resolve(__dirname, "./build")));
 app.use(express.json());
 
@@ -119,6 +119,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./build", "index.html"));
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(app.get("port"), function () {
+  console.log("Node app is running at localhost:" + app.get("port"));
 });
