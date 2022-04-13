@@ -8,10 +8,13 @@
     "path": "0.12.7",
     "cors": "2.8.5"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Aditya Mhamunkar",
   "license": "ISC"
 }
