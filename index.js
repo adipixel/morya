@@ -8,7 +8,7 @@ const port = 3000;
 
 // app.use(cors());
 
-app.use(express.static(path.resolve(__dirname, "./frontend/build")));
+app.use(express.static(path.resolve(__dirname, "./build")));
 app.use(express.json());
 
 app.get("/api", (req, res) => {
@@ -116,7 +116,7 @@ app.get("/api/events/:publisherId", customCors, eventsHandler);
 // ------------------------ SSE end-----------------
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./frontend/build", "index.html"));
+  res.sendFile(path.resolve(__dirname, "./build", "index.html"));
 });
 
 app.listen(port, () => {
